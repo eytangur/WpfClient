@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ServiceMatch" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ServiceModel/ServiceMatch/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ServiceModel/ServiceMatch/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ServiceModel/ServiceMatch/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceMatch_GetAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_GetAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_IsUsernameFree_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUsernameFree" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_IsUsernameFree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUsernameFreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertReligion_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertReligion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertReligion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertReligionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdateReligion_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReligion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdateReligion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReligionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetReligion_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetReligion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetReligion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetReligionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectAllReligions_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllReligions" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectAllReligions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllReligionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertPropertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPropertise" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertPropertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPropertiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdatePropertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePropertise" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdatePropertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePropertiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetPropertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetPropertise" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetPropertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetPropertiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectAllPropertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllPropertise" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectAllPropertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllPropertiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCategory" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetCategory" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceMatch">
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/GetAllUsers" message="tns:IServiceMatch_GetAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/GetAllUsersResponse" message="tns:IServiceMatch_GetAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/InsertUser" message="tns:IServiceMatch_InsertUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/InsertUserResponse" message="tns:IServiceMatch_InsertUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/UpdateUser" message="tns:IServiceMatch_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/UpdateUserResponse" message="tns:IServiceMatch_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/DeletetUser" message="tns:IServiceMatch_DeletetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/DeletetUserResponse" message="tns:IServiceMatch_DeletetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/Login" message="tns:IServiceMatch_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/LoginResponse" message="tns:IServiceMatch_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUsernameFree">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/IsUsernameFree" message="tns:IServiceMatch_IsUsernameFree_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/IsUsernameFreeResponse" message="tns:IServiceMatch_IsUsernameFree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertReligion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/InsertReligion" message="tns:IServiceMatch_InsertReligion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/InsertReligionResponse" message="tns:IServiceMatch_InsertReligion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReligion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/UpdateReligion" message="tns:IServiceMatch_UpdateReligion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/UpdateReligionResponse" message="tns:IServiceMatch_UpdateReligion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetReligion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/DeletetReligion" message="tns:IServiceMatch_DeletetReligion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/DeletetReligionResponse" message="tns:IServiceMatch_DeletetReligion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllReligions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllReligions" message="tns:IServiceMatch_SelectAllReligions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllReligionsResponse" message="tns:IServiceMatch_SelectAllReligions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPropertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/InsertPropertise" message="tns:IServiceMatch_InsertPropertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/InsertPropertiseResponse" message="tns:IServiceMatch_InsertPropertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePropertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/UpdatePropertise" message="tns:IServiceMatch_UpdatePropertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/UpdatePropertiseResponse" message="tns:IServiceMatch_UpdatePropertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetPropertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/DeletetPropertise" message="tns:IServiceMatch_DeletetPropertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/DeletetPropertiseResponse" message="tns:IServiceMatch_DeletetPropertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPropertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllPropertise" message="tns:IServiceMatch_SelectAllPropertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllPropertiseResponse" message="tns:IServiceMatch_SelectAllPropertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/InsertCategory" message="tns:IServiceMatch_InsertCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/InsertCategoryResponse" message="tns:IServiceMatch_InsertCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/UpdateCategory" message="tns:IServiceMatch_UpdateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/UpdateCategoryResponse" message="tns:IServiceMatch_UpdateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/DeletetCategory" message="tns:IServiceMatch_DeletetCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/DeletetCategoryResponse" message="tns:IServiceMatch_DeletetCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllCategories" message="tns:IServiceMatch_SelectAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllCategoriesResponse" message="tns:IServiceMatch_SelectAllCategories_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceMatch" type="tns:IServiceMatch">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/InsertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/DeletetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUsernameFree">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/IsUsernameFree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertReligion">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/InsertReligion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReligion">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/UpdateReligion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetReligion">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/DeletetReligion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllReligions">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectAllReligions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPropertise">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/InsertPropertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePropertise">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/UpdatePropertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetPropertise">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/DeletetPropertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPropertise">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectAllPropertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCategory">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/InsertCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetCategory">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/DeletetCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceMatch">
+    <wsdl:port name="BasicHttpBinding_IServiceMatch" binding="tns:BasicHttpBinding_IServiceMatch">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/ServiceModel/ServiceMatch/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

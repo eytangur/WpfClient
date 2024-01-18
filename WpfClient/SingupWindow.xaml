@@ -1,0 +1,268 @@
+﻿<Window x:Class="WpfClient.SingupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfClient"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="SingupWindow"
+        Height="650"
+        Width="550">
+    <Window.Background>
+        <!-- Background with Gradient -->
+        <LinearGradientBrush StartPoint="0.5,0"
+                             EndPoint="0.5,1">
+            <GradientStop Color="#FFEEECE7"
+                          Offset="0.0" />
+            <!-- Creamy white color -->
+            <GradientStop Color="#FFF5E7E4"
+                          Offset="1.0" />
+            <!-- Light pink color -->
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <!-- Styles for TextBox and PasswordBox -->
+        <Style TargetType="TextBox"
+               BasedOn="{StaticResource MaterialDesignTextBox}">
+            <Setter Property="BorderBrush"
+                    Value="#FF21A2B3" />
+            <Setter Property="Margin"
+                    Value="15 0" />
+            <Setter Property="MinWidth"
+                    Value="200" />
+            <Setter Property="FontSize"
+                    Value="20" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+        </Style>
+        <Style TargetType="DatePicker"
+               BasedOn="{StaticResource MaterialDesignDatePicker}">
+            <Setter Property="BorderBrush"
+                    Value="#FF21A2B3" />
+            <Setter Property="Margin"
+                    Value="15 0" />
+            <Setter Property="MinWidth"
+                    Value="200" />
+            <Setter Property="FontSize"
+                    Value="20" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+        </Style>
+        <Style TargetType="PasswordBox"
+               BasedOn="{StaticResource MaterialDesignPasswordBox}">
+            <Setter Property="BorderBrush"
+                    Value="#FF21A2B3 " />
+            <Setter Property="Margin"
+                    Value="15 0" />
+            <Setter Property="MinWidth"
+                    Value="200" />
+            <Setter Property="FontSize"
+                    Value="20" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+        </Style>
+        <Style TargetType="ComboBox"
+               BasedOn="{StaticResource MaterialDesignComboBox}">
+            <Setter Property="BorderBrush"
+                    Value="#FF21A2B3" />
+            <Setter Property="Margin"
+                    Value="15 0" />
+            <Setter Property="MinWidth"
+                    Value="200" />
+            <Setter Property="FontSize"
+                    Value="20" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.2*" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1"
+                    Margin="0,0,0,15"
+                    Grid.RowSpan="3">
+            <TextBlock Text="Sign up"
+                       Grid.Row="0"
+                       FontSize="50"
+                       FontWeight="DemiBold"
+                       HorizontalAlignment="Center"
+                       Foreground="#FF20646D"
+                       Height="99" />
+        </StackPanel>
+        <StackPanel Grid.Row="4"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <materialDesign:PackIcon Kind="Account"
+                                     Width="24"
+                                     Height="24"
+                                     VerticalAlignment="Center"
+                                     x:Name="dhErrors" />
+            <TextBox x:Name="UserNameTextBox"
+                     materialDesign:HintAssist.Hint="UserName"
+                     materialDesign:HintAssist.HelperText="">
+                <TextBox.Text>
+                    <Binding Path="UserName"
+                             ValidatesOnDataErrors="True"
+                             UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:ValidUserName />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <materialDesign:PackIcon Kind="LockQuestion"
+                                     Width="24"
+                                     Height="24"
+                                     VerticalAlignment="Center" />
+            <PasswordBox   x:Name="PasswordBox"
+                           materialDesign:HintAssist.Hint="Password"
+                           materialDesign:TextFieldAssist.HasClearButton="True"
+                           PasswordChanged="pbxPassword_PasswordChanged" />
+        </StackPanel>
+        <StackPanel Grid.Row="4"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"></StackPanel>
+        <StackPanel Grid.Row="6"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <materialDesign:PackIcon Kind="GenderTransgender"
+                                     Width="24"
+                                     Height="24"
+                                     VerticalAlignment="Center" />
+            <ComboBox x:Name="GenderComboBox"
+                      materialDesign:HintAssist.Hint="Gender">
+                <ComboBox.Resources>
+                    <SolidColorBrush x:Key="MaterialDesignPaper"
+                                     Color="AntiqueWhite" />
+                </ComboBox.Resources>
+                <ComboBoxItem>Male</ComboBoxItem>
+                <ComboBoxItem>Female</ComboBoxItem>
+            </ComboBox>
+            <materialDesign:PackIcon Kind="LockQuestion"
+                                     Width="24"
+                                     Height="24"
+                                     VerticalAlignment="Center" />
+            <PasswordBox   x:Name="RepeatPasswordBox"
+                           materialDesign:HintAssist.Hint="Repeat password"
+                           materialDesign:TextFieldAssist.HasClearButton="True"
+                           PasswordChanged="pbxRePassword_PasswordChanged" />
+            
+        </StackPanel>
+        <StackPanel Grid.Row="8"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <materialDesign:PackIcon Kind="Cake"
+                                     Width="24"
+                                     Height="24"
+                                     VerticalAlignment="Center" />
+            <DatePicker x:Name="birthDatePickerTextBox"
+                        materialDesign:HintAssist.Hint="Birth Day">
+                <DatePicker.Resources>
+                    <SolidColorBrush x:Key="MaterialDesignPaper"
+                                     Color="White" />
+                </DatePicker.Resources>
+                <DatePicker.SelectedDate>
+                    <Binding Path="BDay"
+                             ValidatesOnDataErrors="True"
+                             UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:ValidBDay />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </DatePicker.SelectedDate>
+            </DatePicker>
+            <materialDesign:PackIcon Kind="Account"
+                                     Width="24"
+                                     Height="24"
+                                     VerticalAlignment="Center" />
+            <TextBox x:Name="PhoneNumberTextBox"
+                     materialDesign:HintAssist.Hint="PhoneNumber">
+                <TextBox.Text>
+                    <Binding Path="PhoneNum" ValidatesOnDataErrors="True"
+                             UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:ValidPhone />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="10"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <materialDesign:PackIcon Kind="EmailOutline"
+                                     Width="24"
+                                     Height="24"
+                                     VerticalAlignment="Center" />
+            <TextBox x:Name="EmailTextBox"
+                     materialDesign:HintAssist.Hint="Email">
+                <TextBox.Text>
+                    <Binding Path="Email"
+                             ValidatesOnDataErrors="True"
+                             UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:ValidEmail />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Grid.Row="12">
+            <Grid Width="120"
+                  Margin="5 0">
+                <Button Style="{StaticResource MaterialDesignRaisedButton}"
+                        Height="40"
+                        materialDesign:ButtonAssist.CornerRadius="15"
+                        Content="Create ME!"
+                        Click="Signup_Click" />
+            </Grid>
+            <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                    ToolTip="MaterialDesignFloatingActionLightButton"
+                    Margin="5 0"
+                    Click="Clear_Click">
+                <materialDesign:PackIcon Kind="Autorenew"
+                                         Height="30"
+                                         Width="30" />
+            </Button>
+            <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                    ToolTip="MaterialDesignFloatingActionLightButton"
+                    Margin="5 0"
+                    Click="Close_Click">
+                <materialDesign:PackIcon Kind="CloseCircle"
+                                         Height="30"
+                                         Width="30" />
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
+
