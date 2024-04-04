@@ -21,6 +21,7 @@ namespace WpfClient
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private User user;
         private ServiceMatchClient matchClient;
         private bool userNameOK, passOK;
 
@@ -37,34 +38,35 @@ namespace WpfClient
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (userNameOK && passOK)
+            if (!userNameOK || !passOK)
             {
-                User user = new User { UserName = tbxUsername.Text, Password = pbPassword.Password };
-                user = matchClient.Login(user);
-                if (user == null)
-                {
-                    MessageBox.Show("no user detected");
-                    return;
-                }
-                if (user.IsManager)
-                {
-                    MessageBox.Show("Manager Login");
-                    ManagerWindow mW = new ManagerWindow(user);
-                    mW.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Regular user login");
-                    UserWindow uw = new UserWindow(user);
-                    uw.ShowDialog();
-                }
-                tbxUsername.Text = pbPassword.Password = string.Empty;
+                MessageBox.Show("Errors found", "wrong", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            user = new User { UserName = tbxUsername.Text, Password = pbPassword.Password };
+            user = matchClient.Login(user);
+            if (user == null)
+            {
+                MessageBox.Show("user not detected");
+                return;
+            }
+            if (user.IsManager)
+            {
+                MessageBox.Show("Manager Login");
+                HomeWindow mW = new HomeWindow(user);
+                Close();
+                mW.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Errors found");
-                return;
+                MessageBox.Show("Regular user login");
+                HomeWindow uw = new HomeWindow(user);
+                Close();
+                uw.ShowDialog();
             }
+            tbxUsername.Text = pbPassword.Password = string.Empty;
+            
+           
         }
         private void btnSingup_Click(object sender, RoutedEventArgs e)
         {
@@ -79,7 +81,7 @@ namespace WpfClient
             if (result.IsValid)
             {
                 tbxUsername.BorderBrush = Brushes.Transparent;
-                HintAssist.SetHelperText(tbxUsername, "User name....");
+                HintAssist.SetHelperText(tbxUsername, "User name");
                 userNameOK = true;
             }
             else {
@@ -98,21 +100,33 @@ namespace WpfClient
             {
                 pbPassword.BorderBrush = Brushes.Transparent;
                 HintAssist.SetHelperText(pbPassword, "Password");
+                passOK = true;
+
             }
             else
             {
                 pbPassword.BorderBrush = Brushes.Red;
                 HintAssist.SetHelperText(pbPassword, result.ErrorContent.ToString());
+                passOK = false;
             }
+        }
+
+        private void Skip_Click(object sender, RoutedEventArgs e)
+        {
+            user = new User { UserName = "Eytansgur17", Password = "Eytansgur17" };
+            user = matchClient.Login(user);
+            HomeWindow wnd = new HomeWindow(user);
+            Close();
+            wnd.Show();
+
         }
 
         private void SingupClick_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            SingupWindow singupWindow = new SingupWindow();
-            singupWindow.ShowDialog();
             
-
+            SingupWindow singupWindow = new SingupWindow();
+            Close();
+            singupWindow.ShowDialog();    
         }
     }
 }

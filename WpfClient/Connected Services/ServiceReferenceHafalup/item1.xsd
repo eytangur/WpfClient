@@ -21,6 +21,7 @@
           <xs:element minOccurs="0" name="MyReligion" nillable="true" type="tns:Religion" />
           <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PhoneNum" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Propertises" nillable="true" type="tns:PropertiseList" />
           <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -43,12 +44,12 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Religion" nillable="true" type="tns:Religion" />
-  <xs:complexType name="ReligionList">
+  <xs:complexType name="PropertiseList">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Religion" nillable="true" type="tns:Religion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Propertise" nillable="true" type="tns:Propertise" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ReligionList" nillable="true" type="tns:ReligionList" />
+  <xs:element name="PropertiseList" nillable="true" type="tns:PropertiseList" />
   <xs:complexType name="Propertise">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:BaseEntity">
@@ -70,16 +71,54 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Category" nillable="true" type="tns:Category" />
-  <xs:complexType name="PropertiseList">
+  <xs:complexType name="ReligionList">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Propertise" nillable="true" type="tns:Propertise" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Religion" nillable="true" type="tns:Religion" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="PropertiseList" nillable="true" type="tns:PropertiseList" />
+  <xs:element name="ReligionList" nillable="true" type="tns:ReligionList" />
   <xs:complexType name="CategoryList">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CategoryList" nillable="true" type="tns:CategoryList" />
+  <xs:complexType name="Chat">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Approve1" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Approve2" type="xs:boolean" />
+          <xs:element minOccurs="0" name="User1" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="User2" nillable="true" type="tns:User" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Chat" nillable="true" type="tns:Chat" />
+  <xs:complexType name="ChatList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chat" nillable="true" type="tns:Chat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChatList" nillable="true" type="tns:ChatList" />
+  <xs:complexType name="Message">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Chat" nillable="true" type="tns:Chat" />
+          <xs:element minOccurs="0" name="Sender" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="When" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:complexType name="MessageList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageList" nillable="true" type="tns:MessageList" />
 </xs:schema>

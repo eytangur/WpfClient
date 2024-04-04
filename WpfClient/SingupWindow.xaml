@@ -13,7 +13,7 @@
         <!-- Background with Gradient -->
         <LinearGradientBrush StartPoint="0.5,0"
                              EndPoint="0.5,1">
-            <GradientStop Color="#FFEEECE7"
+            <GradientStop Color="LightPink"
                           Offset="0.0" />
             <!-- Creamy white color -->
             <GradientStop Color="#FFF5E7E4"
@@ -26,7 +26,7 @@
         <Style TargetType="TextBox"
                BasedOn="{StaticResource MaterialDesignTextBox}">
             <Setter Property="BorderBrush"
-                    Value="#FF21A2B3" />
+                    Value="HotPink" />
             <Setter Property="Margin"
                     Value="15 0" />
             <Setter Property="MinWidth"
@@ -41,7 +41,7 @@
         <Style TargetType="DatePicker"
                BasedOn="{StaticResource MaterialDesignDatePicker}">
             <Setter Property="BorderBrush"
-                    Value="#FF21A2B3" />
+                    Value="HotPink" />
             <Setter Property="Margin"
                     Value="15 0" />
             <Setter Property="MinWidth"
@@ -56,7 +56,7 @@
         <Style TargetType="PasswordBox"
                BasedOn="{StaticResource MaterialDesignPasswordBox}">
             <Setter Property="BorderBrush"
-                    Value="#FF21A2B3 " />
+                    Value="HotPink" />
             <Setter Property="Margin"
                     Value="15 0" />
             <Setter Property="MinWidth"
@@ -71,7 +71,7 @@
         <Style TargetType="ComboBox"
                BasedOn="{StaticResource MaterialDesignComboBox}">
             <Setter Property="BorderBrush"
-                    Value="#FF21A2B3" />
+                    Value="HotPink" />
             <Setter Property="Margin"
                     Value="15 0" />
             <Setter Property="MinWidth"
@@ -109,7 +109,8 @@
                        FontSize="50"
                        FontWeight="DemiBold"
                        HorizontalAlignment="Center"
-                       Foreground="#FF20646D"
+                       Foreground=
+                       "HotPink"
                        Height="99" />
         </StackPanel>
         <StackPanel Grid.Row="4"

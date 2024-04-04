@@ -21,7 +21,7 @@ namespace WpfClient
                 Regex letter = new Regex("[a-zA-z]");
                 if (text.Length < 5)
                     throw new Exception("At least 5 letters...");
-                if (text.Length > 12)
+                if (text.Length > 20)
                     throw new Exception("UserName too long");
                 if (text.IndexOf(" ") != -1)
                     throw new Exception("UserName can not include space");

@@ -45,10 +45,10 @@ namespace WpfClient
             if (myMatchService.InsertUser(myUser) == 1)
             {
                 myUser = myMatchService.Login(myUser);
-                MessageBox.Show("welcome to our channel :)", "OK", MessageBoxButton.OK);
-                LoginWindow wnd = new LoginWindow();
-                wnd.ShowDialog();
+                MessageBox.Show("One more step and you are done", "OK", MessageBoxButton.OK);
+                AdditionalInformationWindow wnd = new AdditionalInformationWindow(myUser);
                 Close();
+                wnd.ShowDialog();
             }
         }
         

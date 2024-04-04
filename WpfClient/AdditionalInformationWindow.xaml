@@ -4,28 +4,31 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfClient"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="AdditionalInformationWindow"
+        Title="Additional Information"
         Height="650"
         Width="550">
     <Window.Background>
-        <!-- Background with Gradient -->
         <LinearGradientBrush StartPoint="0.5,0"
                              EndPoint="0.5,1">
-            <GradientStop Color="#FFEEECE7"
+            <GradientStop Color="#FFE8D3D3"
                           Offset="0.0" />
-            <!-- Creamy white color -->
-            <GradientStop Color="#FFF5E7E4"
+            <GradientStop Color="#FFECB4B4"
                           Offset="1.0" />
-            <!-- Light pink color -->
         </LinearGradientBrush>
     </Window.Background>
     <Window.Resources>
-        <!-- Styles for TextBox and PasswordBox -->
+        <Style TargetType="Expander">
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="BorderThickness"
+                    Value="2" />
+        </Style>
         <Style TargetType="TextBox"
                BasedOn="{StaticResource MaterialDesignTextBox}">
             <Setter Property="BorderBrush"
-                    Value="#FF21A2B3" />
+                    Value="#FFC28585" />
             <Setter Property="Margin"
                     Value="15 0" />
             <Setter Property="MinWidth"
@@ -40,7 +43,7 @@
         <Style TargetType="ComboBox"
                BasedOn="{StaticResource MaterialDesignComboBox}">
             <Setter Property="BorderBrush"
-                    Value="#FF21A2B3" />
+                    Value="#FFC28585" />
             <Setter Property="Margin"
                     Value="15 0" />
             <Setter Property="MinWidth"
@@ -53,38 +56,35 @@
                     Value="Left" />
         </Style>
     </Window.Resources>
-    <Grid x:Name="additionalmainGrid">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.2*" />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1"
-                    Margin="0,0,0,15"
-                    Grid.RowSpan="3">
-            <TextBlock Text="Sign up"
-                       Grid.Row="0"
-                       FontSize="50"
-                       FontWeight="DemiBold"
-                       HorizontalAlignment="Center"
-                       Foreground="#FF20646D"
-                       Height="99" />
-        </StackPanel>
-        <StackPanel Grid.Row="4"
-            Orientation="Horizontal" HorizontalAlignment="Center"
-            VerticalAlignment="Center">
-            <TextBox x:Name="musicTextBox"></TextBox>
-        </StackPanel>
+        <TextBlock Text="Sign Up"
+                   Grid.Row="0"
+                   FontSize="50"
+                   FontWeight="DemiBold"
+                   HorizontalAlignment="Center"
+                   Foreground="#FF8F5858"
+                   Margin="0,20,0,0" />
+        <materialDesign:Card Grid.Row="1"
+                             Background="{DynamicResource MaterialDesignBackground}"
+                             Margin="15">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="CategoryStack" />
+            </ScrollViewer>            
+        </materialDesign:Card>
+        <Grid Width="120"
+              Margin="5 10"
+              Grid.Row="2">
+            <Button Style="{StaticResource MaterialDesignRaisedButton}"
+                    Height="50" FontWeight="Black"
+                    materialDesign:ButtonAssist.CornerRadius="15"
+                    Content="Create ME!"
+                    Click="FinalSignup_Click" />
+            
+        </Grid>
     </Grid>
 </Window>

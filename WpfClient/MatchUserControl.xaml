@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="WpfClient.MatchUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:servicereferencehafalup="clr-namespace:WpfClient.ServiceReferenceHafalup"
+             d:DataContext="{d:DesignInstance Type=servicereferencehafalup:User}"
+             mc:Ignorable="d"
+             Height="100"
+             Width="200">
+    <Border BorderBrush="HotPink" BorderThickness="2" CornerRadius="15" Margin="2">
+        <Grid>
+            <TextBlock Text="{Binding Path=UserName}"
+                       Margin="5 0"
+                       FontSize="18"
+                       FontStyle="Italic"
+                       Foreground="HotPink" />
+            <TextBlock x:Name="GenderTextBlock"
+                       Margin="5 0"
+                       FontSize="18"
+                       FontStyle="Italic"
+                       Foreground="#DDE8DBDB"
+                       HorizontalAlignment="Right" />
+            <lvc:Gauge Grid.Row="2"
+                       x:Name="MatchRate"
+                       Grid.Column="0"
+                       Margin="5"
+                       From="0"
+                       To="100"
+                       Value="25" />
+        </Grid>
+    </Border>
+</UserControl>

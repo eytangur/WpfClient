@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="WpfClient.UserControlChatHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfClient"
+             mc:Ignorable="d"
+             d:DesignHeight="75"
+             d:DesignWidth="200"
+             MinHeight="75"
+             MinWidth="200">
+    
+    <Grid>
+        <Button x:Name="btnAll"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Height="Auto"
+                Width="Auto"
+                Padding="5"
+                HorizontalContentAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                
+                <StackPanel>
+                    <TextBlock x:Name="tbUserName"
+                               Text="Users name"
+                               Margin="5 0"
+                               FontSize="18"
+                               Foreground="#DDE8DBDB" />
+                    <TextBlock x:Name="tbUserInfo"
+                               Text="Email and phone"
+                               Margin="5 0"
+                               TextTrimming="CharacterEllipsis"
+                               Opacity="0.6"
+                               FontSize="10"
+                               Foreground="#DDB9D6CD" />
+                </StackPanel>
+            </StackPanel>
+        </Button>
+    </Grid>
+</UserControl>

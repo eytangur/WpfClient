@@ -60,6 +60,9 @@ namespace WpfClient.ServiceReferenceHafalup {
         private string PhoneNumField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfClient.ServiceReferenceHafalup.PropertiseList PropertisesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UserNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -206,6 +209,19 @@ namespace WpfClient.ServiceReferenceHafalup {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfClient.ServiceReferenceHafalup.PropertiseList Propertises {
+            get {
+                return this.PropertisesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PropertisesField, value) != true)) {
+                    this.PropertisesField = value;
+                    this.RaisePropertyChanged("Propertises");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string UserName {
             get {
                 return this.UserNameField;
@@ -226,6 +242,8 @@ namespace WpfClient.ServiceReferenceHafalup {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClient.ServiceReferenceHafalup.Religion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClient.ServiceReferenceHafalup.Propertise))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClient.ServiceReferenceHafalup.Category))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClient.ServiceReferenceHafalup.Chat))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClient.ServiceReferenceHafalup.Message))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WpfClient.ServiceReferenceHafalup.User))]
     public partial class BaseEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -355,9 +373,144 @@ namespace WpfClient.ServiceReferenceHafalup {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReligionList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Religion")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Chat", Namespace="http://schemas.datacontract.org/2004/07/Model")]
     [System.SerializableAttribute()]
-    public class ReligionList : System.Collections.Generic.List<WpfClient.ServiceReferenceHafalup.Religion> {
+    public partial class Chat : WpfClient.ServiceReferenceHafalup.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool Approve1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool Approve2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfClient.ServiceReferenceHafalup.User User1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfClient.ServiceReferenceHafalup.User User2Field;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Approve1 {
+            get {
+                return this.Approve1Field;
+            }
+            set {
+                if ((this.Approve1Field.Equals(value) != true)) {
+                    this.Approve1Field = value;
+                    this.RaisePropertyChanged("Approve1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Approve2 {
+            get {
+                return this.Approve2Field;
+            }
+            set {
+                if ((this.Approve2Field.Equals(value) != true)) {
+                    this.Approve2Field = value;
+                    this.RaisePropertyChanged("Approve2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfClient.ServiceReferenceHafalup.User User1 {
+            get {
+                return this.User1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.User1Field, value) != true)) {
+                    this.User1Field = value;
+                    this.RaisePropertyChanged("User1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfClient.ServiceReferenceHafalup.User User2 {
+            get {
+                return this.User2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.User2Field, value) != true)) {
+                    this.User2Field = value;
+                    this.RaisePropertyChanged("User2");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Message", Namespace="http://schemas.datacontract.org/2004/07/Model")]
+    [System.SerializableAttribute()]
+    public partial class Message : WpfClient.ServiceReferenceHafalup.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfClient.ServiceReferenceHafalup.Chat ChatField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfClient.ServiceReferenceHafalup.User SenderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime WhenField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfClient.ServiceReferenceHafalup.Chat Chat {
+            get {
+                return this.ChatField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChatField, value) != true)) {
+                    this.ChatField = value;
+                    this.RaisePropertyChanged("Chat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfClient.ServiceReferenceHafalup.User Sender {
+            get {
+                return this.SenderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SenderField, value) != true)) {
+                    this.SenderField = value;
+                    this.RaisePropertyChanged("Sender");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Text {
+            get {
+                return this.TextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TextField, value) != true)) {
+                    this.TextField = value;
+                    this.RaisePropertyChanged("Text");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime When {
+            get {
+                return this.WhenField;
+            }
+            set {
+                if ((this.WhenField.Equals(value) != true)) {
+                    this.WhenField = value;
+                    this.RaisePropertyChanged("When");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -369,9 +522,30 @@ namespace WpfClient.ServiceReferenceHafalup {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReligionList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Religion")]
+    [System.SerializableAttribute()]
+    public class ReligionList : System.Collections.Generic.List<WpfClient.ServiceReferenceHafalup.Religion> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CategoryList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Category")]
     [System.SerializableAttribute()]
     public class CategoryList : System.Collections.Generic.List<WpfClient.ServiceReferenceHafalup.Category> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ChatList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Chat")]
+    [System.SerializableAttribute()]
+    public class ChatList : System.Collections.Generic.List<WpfClient.ServiceReferenceHafalup.Chat> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="MessageList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Message")]
+    [System.SerializableAttribute()]
+    public class MessageList : System.Collections.Generic.List<WpfClient.ServiceReferenceHafalup.Message> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -413,6 +587,24 @@ namespace WpfClient.ServiceReferenceHafalup {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/IsUsernameFree", ReplyAction="http://tempuri.org/IServiceMatch/IsUsernameFreeResponse")]
         System.Threading.Tasks.Task<bool> IsUsernameFreeAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/InsertUserPropertise", ReplyAction="http://tempuri.org/IServiceMatch/InsertUserPropertiseResponse")]
+        int InsertUserPropertise(WpfClient.ServiceReferenceHafalup.User user, WpfClient.ServiceReferenceHafalup.Propertise propertise);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/InsertUserPropertise", ReplyAction="http://tempuri.org/IServiceMatch/InsertUserPropertiseResponse")]
+        System.Threading.Tasks.Task<int> InsertUserPropertiseAsync(WpfClient.ServiceReferenceHafalup.User user, WpfClient.ServiceReferenceHafalup.Propertise propertise);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/DeleteUserPropertise", ReplyAction="http://tempuri.org/IServiceMatch/DeleteUserPropertiseResponse")]
+        int DeleteUserPropertise(WpfClient.ServiceReferenceHafalup.User user, WpfClient.ServiceReferenceHafalup.Propertise propertise);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/DeleteUserPropertise", ReplyAction="http://tempuri.org/IServiceMatch/DeleteUserPropertiseResponse")]
+        System.Threading.Tasks.Task<int> DeleteUserPropertiseAsync(WpfClient.ServiceReferenceHafalup.User user, WpfClient.ServiceReferenceHafalup.Propertise propertise);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/FindMatch", ReplyAction="http://tempuri.org/IServiceMatch/FindMatchResponse")]
+        WpfClient.ServiceReferenceHafalup.UserList FindMatch(WpfClient.ServiceReferenceHafalup.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/FindMatch", ReplyAction="http://tempuri.org/IServiceMatch/FindMatchResponse")]
+        System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.UserList> FindMatchAsync(WpfClient.ServiceReferenceHafalup.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/InsertReligion", ReplyAction="http://tempuri.org/IServiceMatch/InsertReligionResponse")]
         int InsertReligion(WpfClient.ServiceReferenceHafalup.Religion religen);
@@ -462,6 +654,18 @@ namespace WpfClient.ServiceReferenceHafalup {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectAllPropertise", ReplyAction="http://tempuri.org/IServiceMatch/SelectAllPropertiseResponse")]
         System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.PropertiseList> SelectAllPropertiseAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectPropertisesByCategory", ReplyAction="http://tempuri.org/IServiceMatch/SelectPropertisesByCategoryResponse")]
+        WpfClient.ServiceReferenceHafalup.PropertiseList SelectPropertisesByCategory(WpfClient.ServiceReferenceHafalup.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectPropertisesByCategory", ReplyAction="http://tempuri.org/IServiceMatch/SelectPropertisesByCategoryResponse")]
+        System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.PropertiseList> SelectPropertisesByCategoryAsync(WpfClient.ServiceReferenceHafalup.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectPropertisesByUser", ReplyAction="http://tempuri.org/IServiceMatch/SelectPropertisesByUserResponse")]
+        WpfClient.ServiceReferenceHafalup.PropertiseList SelectPropertisesByUser(WpfClient.ServiceReferenceHafalup.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectPropertisesByUser", ReplyAction="http://tempuri.org/IServiceMatch/SelectPropertisesByUserResponse")]
+        System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.PropertiseList> SelectPropertisesByUserAsync(WpfClient.ServiceReferenceHafalup.User user);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/InsertCategory", ReplyAction="http://tempuri.org/IServiceMatch/InsertCategoryResponse")]
         int InsertCategory(WpfClient.ServiceReferenceHafalup.Category category);
         
@@ -485,6 +689,66 @@ namespace WpfClient.ServiceReferenceHafalup {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectAllCategories", ReplyAction="http://tempuri.org/IServiceMatch/SelectAllCategoriesResponse")]
         System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.CategoryList> SelectAllCategoriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/NewChat", ReplyAction="http://tempuri.org/IServiceMatch/NewChatResponse")]
+        int NewChat(WpfClient.ServiceReferenceHafalup.Chat chat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/NewChat", ReplyAction="http://tempuri.org/IServiceMatch/NewChatResponse")]
+        System.Threading.Tasks.Task<int> NewChatAsync(WpfClient.ServiceReferenceHafalup.Chat chat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/UpdateChat", ReplyAction="http://tempuri.org/IServiceMatch/UpdateChatResponse")]
+        int UpdateChat(WpfClient.ServiceReferenceHafalup.Chat chat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/UpdateChat", ReplyAction="http://tempuri.org/IServiceMatch/UpdateChatResponse")]
+        System.Threading.Tasks.Task<int> UpdateChatAsync(WpfClient.ServiceReferenceHafalup.Chat chat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/DeletetChat", ReplyAction="http://tempuri.org/IServiceMatch/DeletetChatResponse")]
+        int DeletetChat(WpfClient.ServiceReferenceHafalup.Chat chat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/DeletetChat", ReplyAction="http://tempuri.org/IServiceMatch/DeletetChatResponse")]
+        System.Threading.Tasks.Task<int> DeletetChatAsync(WpfClient.ServiceReferenceHafalup.Chat chat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectAllChats", ReplyAction="http://tempuri.org/IServiceMatch/SelectAllChatsResponse")]
+        WpfClient.ServiceReferenceHafalup.ChatList SelectAllChats();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectAllChats", ReplyAction="http://tempuri.org/IServiceMatch/SelectAllChatsResponse")]
+        System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectAllChatsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectChatsByUser", ReplyAction="http://tempuri.org/IServiceMatch/SelectChatsByUserResponse")]
+        WpfClient.ServiceReferenceHafalup.ChatList SelectChatsByUser(WpfClient.ServiceReferenceHafalup.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectChatsByUser", ReplyAction="http://tempuri.org/IServiceMatch/SelectChatsByUserResponse")]
+        System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectChatsByUserAsync(WpfClient.ServiceReferenceHafalup.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/InsertMessage", ReplyAction="http://tempuri.org/IServiceMatch/InsertMessageResponse")]
+        int InsertMessage(WpfClient.ServiceReferenceHafalup.Message message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/InsertMessage", ReplyAction="http://tempuri.org/IServiceMatch/InsertMessageResponse")]
+        System.Threading.Tasks.Task<int> InsertMessageAsync(WpfClient.ServiceReferenceHafalup.Message message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/UpdateMessage", ReplyAction="http://tempuri.org/IServiceMatch/UpdateMessageResponse")]
+        int UpdateMessage(WpfClient.ServiceReferenceHafalup.Message message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/UpdateMessage", ReplyAction="http://tempuri.org/IServiceMatch/UpdateMessageResponse")]
+        System.Threading.Tasks.Task<int> UpdateMessageAsync(WpfClient.ServiceReferenceHafalup.Message message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/DeletetMessage", ReplyAction="http://tempuri.org/IServiceMatch/DeletetMessageResponse")]
+        int DeletetMessage(WpfClient.ServiceReferenceHafalup.Message message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/DeletetMessage", ReplyAction="http://tempuri.org/IServiceMatch/DeletetMessageResponse")]
+        System.Threading.Tasks.Task<int> DeletetMessageAsync(WpfClient.ServiceReferenceHafalup.Message message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectAllMessages", ReplyAction="http://tempuri.org/IServiceMatch/SelectAllMessagesResponse")]
+        WpfClient.ServiceReferenceHafalup.MessageList SelectAllMessages();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectAllMessages", ReplyAction="http://tempuri.org/IServiceMatch/SelectAllMessagesResponse")]
+        System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.MessageList> SelectAllMessagesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectMessagesByChat", ReplyAction="http://tempuri.org/IServiceMatch/SelectMessagesByChatResponse")]
+        WpfClient.ServiceReferenceHafalup.MessageList SelectMessagesByChat(WpfClient.ServiceReferenceHafalup.Chat chat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectMessagesByChat", ReplyAction="http://tempuri.org/IServiceMatch/SelectMessagesByChatResponse")]
+        System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.MessageList> SelectMessagesByChatAsync(WpfClient.ServiceReferenceHafalup.Chat chat);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -562,6 +826,30 @@ namespace WpfClient.ServiceReferenceHafalup {
             return base.Channel.IsUsernameFreeAsync(username);
         }
         
+        public int InsertUserPropertise(WpfClient.ServiceReferenceHafalup.User user, WpfClient.ServiceReferenceHafalup.Propertise propertise) {
+            return base.Channel.InsertUserPropertise(user, propertise);
+        }
+        
+        public System.Threading.Tasks.Task<int> InsertUserPropertiseAsync(WpfClient.ServiceReferenceHafalup.User user, WpfClient.ServiceReferenceHafalup.Propertise propertise) {
+            return base.Channel.InsertUserPropertiseAsync(user, propertise);
+        }
+        
+        public int DeleteUserPropertise(WpfClient.ServiceReferenceHafalup.User user, WpfClient.ServiceReferenceHafalup.Propertise propertise) {
+            return base.Channel.DeleteUserPropertise(user, propertise);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteUserPropertiseAsync(WpfClient.ServiceReferenceHafalup.User user, WpfClient.ServiceReferenceHafalup.Propertise propertise) {
+            return base.Channel.DeleteUserPropertiseAsync(user, propertise);
+        }
+        
+        public WpfClient.ServiceReferenceHafalup.UserList FindMatch(WpfClient.ServiceReferenceHafalup.User user) {
+            return base.Channel.FindMatch(user);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.UserList> FindMatchAsync(WpfClient.ServiceReferenceHafalup.User user) {
+            return base.Channel.FindMatchAsync(user);
+        }
+        
         public int InsertReligion(WpfClient.ServiceReferenceHafalup.Religion religen) {
             return base.Channel.InsertReligion(religen);
         }
@@ -626,6 +914,22 @@ namespace WpfClient.ServiceReferenceHafalup {
             return base.Channel.SelectAllPropertiseAsync();
         }
         
+        public WpfClient.ServiceReferenceHafalup.PropertiseList SelectPropertisesByCategory(WpfClient.ServiceReferenceHafalup.Category category) {
+            return base.Channel.SelectPropertisesByCategory(category);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.PropertiseList> SelectPropertisesByCategoryAsync(WpfClient.ServiceReferenceHafalup.Category category) {
+            return base.Channel.SelectPropertisesByCategoryAsync(category);
+        }
+        
+        public WpfClient.ServiceReferenceHafalup.PropertiseList SelectPropertisesByUser(WpfClient.ServiceReferenceHafalup.User user) {
+            return base.Channel.SelectPropertisesByUser(user);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.PropertiseList> SelectPropertisesByUserAsync(WpfClient.ServiceReferenceHafalup.User user) {
+            return base.Channel.SelectPropertisesByUserAsync(user);
+        }
+        
         public int InsertCategory(WpfClient.ServiceReferenceHafalup.Category category) {
             return base.Channel.InsertCategory(category);
         }
@@ -656,6 +960,86 @@ namespace WpfClient.ServiceReferenceHafalup {
         
         public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.CategoryList> SelectAllCategoriesAsync() {
             return base.Channel.SelectAllCategoriesAsync();
+        }
+        
+        public int NewChat(WpfClient.ServiceReferenceHafalup.Chat chat) {
+            return base.Channel.NewChat(chat);
+        }
+        
+        public System.Threading.Tasks.Task<int> NewChatAsync(WpfClient.ServiceReferenceHafalup.Chat chat) {
+            return base.Channel.NewChatAsync(chat);
+        }
+        
+        public int UpdateChat(WpfClient.ServiceReferenceHafalup.Chat chat) {
+            return base.Channel.UpdateChat(chat);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateChatAsync(WpfClient.ServiceReferenceHafalup.Chat chat) {
+            return base.Channel.UpdateChatAsync(chat);
+        }
+        
+        public int DeletetChat(WpfClient.ServiceReferenceHafalup.Chat chat) {
+            return base.Channel.DeletetChat(chat);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeletetChatAsync(WpfClient.ServiceReferenceHafalup.Chat chat) {
+            return base.Channel.DeletetChatAsync(chat);
+        }
+        
+        public WpfClient.ServiceReferenceHafalup.ChatList SelectAllChats() {
+            return base.Channel.SelectAllChats();
+        }
+        
+        public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectAllChatsAsync() {
+            return base.Channel.SelectAllChatsAsync();
+        }
+        
+        public WpfClient.ServiceReferenceHafalup.ChatList SelectChatsByUser(WpfClient.ServiceReferenceHafalup.User user) {
+            return base.Channel.SelectChatsByUser(user);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectChatsByUserAsync(WpfClient.ServiceReferenceHafalup.User user) {
+            return base.Channel.SelectChatsByUserAsync(user);
+        }
+        
+        public int InsertMessage(WpfClient.ServiceReferenceHafalup.Message message) {
+            return base.Channel.InsertMessage(message);
+        }
+        
+        public System.Threading.Tasks.Task<int> InsertMessageAsync(WpfClient.ServiceReferenceHafalup.Message message) {
+            return base.Channel.InsertMessageAsync(message);
+        }
+        
+        public int UpdateMessage(WpfClient.ServiceReferenceHafalup.Message message) {
+            return base.Channel.UpdateMessage(message);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMessageAsync(WpfClient.ServiceReferenceHafalup.Message message) {
+            return base.Channel.UpdateMessageAsync(message);
+        }
+        
+        public int DeletetMessage(WpfClient.ServiceReferenceHafalup.Message message) {
+            return base.Channel.DeletetMessage(message);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeletetMessageAsync(WpfClient.ServiceReferenceHafalup.Message message) {
+            return base.Channel.DeletetMessageAsync(message);
+        }
+        
+        public WpfClient.ServiceReferenceHafalup.MessageList SelectAllMessages() {
+            return base.Channel.SelectAllMessages();
+        }
+        
+        public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.MessageList> SelectAllMessagesAsync() {
+            return base.Channel.SelectAllMessagesAsync();
+        }
+        
+        public WpfClient.ServiceReferenceHafalup.MessageList SelectMessagesByChat(WpfClient.ServiceReferenceHafalup.Chat chat) {
+            return base.Channel.SelectMessagesByChat(chat);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.MessageList> SelectMessagesByChatAsync(WpfClient.ServiceReferenceHafalup.Chat chat) {
+            return base.Channel.SelectMessagesByChatAsync(chat);
         }
     }
 }

@@ -8,21 +8,20 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStyle="None"
-        AllowsTransparency="True"
+        AllowsTransparency="True" Width="600" Height="350"
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Rectangle RadiusY="8"
                    RadiusX="8"
                    Fill="White" />
-        <Image Source="Assets/welcome.jpeg"
-               Margin="310,0,0,0"
-               Stretch="UniformToFill" />
+        <Image Source="/Media/Logo.jpg" Margin="310,0,0,0"
+               Stretch="UniformToFill"/>
         <Rectangle Margin="310,0,0,0">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1"
                                      StartPoint="0.5,0">
-                    <GradientStop Color="#CCEA4646" />
+                    <GradientStop Color="#CCBB3FB6" />
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
@@ -81,13 +80,19 @@
                        Margin="10"
                        Foreground="#707070" />
             </Grid>
-            <Button HorizontalAlignment="Center"
+            <Button x:Name="LoginClick"
+                    Click="btnLogin_Click"
+                    HorizontalAlignment="Center"
                     Content="LOGIN"
                     FontFamily="Impact"
                     FontSize="18"
                     Width="100"
-                    Background="#FF307CD6"
-                    BorderBrush="#FF307CD6" />
+                    Background="#FFC85EBF"
+                    BorderBrush="#FF6C2A77"
+                    Foreground="White" />
+            <Button Content="$"
+                    Click="Skip_Click" />
+            
         </StackPanel>
         <StackPanel Margin="310,50,0,50">
             <TextBlock Text="Welcome"

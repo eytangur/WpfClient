@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="WpfClient.EditPropUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfClient"
+             mc:Ignorable="d"
+             Height="450"
+             Width="800"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <UserControl.Resources>
+        <Style x:Key="ButtonStyle"
+               TargetType="Button">
+            <Setter Property="MinWidth"
+                    Value="30" />
+            <Setter Property="Width"
+                    Value="Auto" />
+            <Setter Property="Height"
+                    Value="30" />
+            <Setter Property="Margin"
+                    Value="3" />
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+            <Setter Property="BorderThickness"
+                    Value="1" />
+            <Setter Property="BorderBrush"
+                    Value="#543B27" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+            <Setter Property="VerticalAlignment"
+                    Value="Top" />
+            <Setter Property="Padding"
+                    Value="10" />
+            <Setter Property="Cursor"
+                    Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="#6E563D">
+                            <Grid>
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center" />
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Catergories and Propertise"
+                   FontSize="30" TextAlignment="Center"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Margin="0 5"
+                   VerticalAlignment="Bottom"
+                   FontWeight="Bold" />
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1" Margin="25 0"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+            <TextBox x:Name="CatNameTextBox"
+                     MinWidth="150"
+                     Margin="0 0 25 0"
+                     materialDesign:HintAssist.HelperText="Selected Category"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <Button 
+                    Click="btnSaveCat_Click"
+                    Style="{StaticResource ButtonStyle}">
+                <materialDesign:PackIcon Kind="CheckboxMarkedOutline" />
+            </Button>
+            <Button 
+                Click="btnNewCat_Click"
+                    Style="{StaticResource ButtonStyle}">
+                <materialDesign:PackIcon Kind="NewBox" />
+            </Button>
+            <Button 
+                    Click="btnCatDelete_Click"
+                    Style="{StaticResource ButtonStyle}">
+                <materialDesign:PackIcon Kind="DeleteCircle" />
+            </Button>
+        </StackPanel>
+        <ListBox x:Name="LbCategory"
+                 Grid.Row="1" Grid.RowSpan="2"
+                 Grid.Column="0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="CategoryEditStack" />
+            </ScrollViewer>
+        </ListBox>
+        <StackPanel Grid.Column="1"
+                    Grid.Row="2"
+                    Margin="35" Width="150"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+            <TextBlock x:Name="tbCatName"
+                       FontSize="25" />
+            <TextBox x:Name="PropNameTextBox"
+                     materialDesign:HintAssist.HelperText="property name"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <StackPanel Orientation="Horizontal" Margin="0 25" >
+                <Button
+                        Click="btnPropSave_Click"
+                        Style="{StaticResource ButtonStyle}">
+                    <materialDesign:PackIcon Kind="CheckboxMarkedOutline" />
+                </Button>
+                <Button Click="btnNewProp_Click"
+                        Style="{StaticResource ButtonStyle}">
+                    <materialDesign:PackIcon Kind="NewBox" />
+                </Button>
+                <Button                         Click="btnPropDelete_Click"
+                        Style="{StaticResource ButtonStyle}">
+                    <materialDesign:PackIcon Kind="DeleteCircle" />
+                </Button>
+               
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

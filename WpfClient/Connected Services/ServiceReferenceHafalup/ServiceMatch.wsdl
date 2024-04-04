@@ -43,6 +43,24 @@
   <wsdl:message name="IServiceMatch_IsUsernameFree_OutputMessage">
     <wsdl:part name="parameters" element="tns:IsUsernameFreeResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertUserPropertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserPropertise" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertUserPropertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserPropertiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeleteUserPropertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserPropertise" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeleteUserPropertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserPropertiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_FindMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMatch" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_FindMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMatchResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceMatch_InsertReligion_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertReligion" />
   </wsdl:message>
@@ -91,6 +109,18 @@
   <wsdl:message name="IServiceMatch_SelectAllPropertise_OutputMessage">
     <wsdl:part name="parameters" element="tns:SelectAllPropertiseResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectPropertisesByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectPropertisesByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectPropertisesByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectPropertisesByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectPropertisesByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectPropertisesByUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectPropertisesByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectPropertisesByUserResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceMatch_InsertCategory_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertCategory" />
   </wsdl:message>
@@ -114,6 +144,66 @@
   </wsdl:message>
   <wsdl:message name="IServiceMatch_SelectAllCategories_OutputMessage">
     <wsdl:part name="parameters" element="tns:SelectAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_NewChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewChat" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_NewChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdateChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateChat" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdateChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetChat" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectAllChats_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllChats" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectAllChats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllChatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectChatsByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectChatsByUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectChatsByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectChatsByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMessage" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_InsertMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdateMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessage" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_UpdateMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetMessage" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_DeletetMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectAllMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllMessages" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectAllMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectMessagesByChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMessagesByChat" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectMessagesByChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMessagesByChatResponse" />
   </wsdl:message>
   <wsdl:portType name="IServiceMatch">
     <wsdl:operation name="GetAllUsers">
@@ -139,6 +229,18 @@
     <wsdl:operation name="IsUsernameFree">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/IsUsernameFree" message="tns:IServiceMatch_IsUsernameFree_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/IsUsernameFreeResponse" message="tns:IServiceMatch_IsUsernameFree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserPropertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/InsertUserPropertise" message="tns:IServiceMatch_InsertUserPropertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/InsertUserPropertiseResponse" message="tns:IServiceMatch_InsertUserPropertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserPropertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/DeleteUserPropertise" message="tns:IServiceMatch_DeleteUserPropertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/DeleteUserPropertiseResponse" message="tns:IServiceMatch_DeleteUserPropertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/FindMatch" message="tns:IServiceMatch_FindMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/FindMatchResponse" message="tns:IServiceMatch_FindMatch_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertReligion">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/InsertReligion" message="tns:IServiceMatch_InsertReligion_InputMessage" />
@@ -172,6 +274,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllPropertise" message="tns:IServiceMatch_SelectAllPropertise_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllPropertiseResponse" message="tns:IServiceMatch_SelectAllPropertise_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SelectPropertisesByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectPropertisesByCategory" message="tns:IServiceMatch_SelectPropertisesByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectPropertisesByCategoryResponse" message="tns:IServiceMatch_SelectPropertisesByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectPropertisesByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectPropertisesByUser" message="tns:IServiceMatch_SelectPropertisesByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectPropertisesByUserResponse" message="tns:IServiceMatch_SelectPropertisesByUser_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="InsertCategory">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/InsertCategory" message="tns:IServiceMatch_InsertCategory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/InsertCategoryResponse" message="tns:IServiceMatch_InsertCategory_OutputMessage" />
@@ -187,6 +297,46 @@
     <wsdl:operation name="SelectAllCategories">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllCategories" message="tns:IServiceMatch_SelectAllCategories_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllCategoriesResponse" message="tns:IServiceMatch_SelectAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/NewChat" message="tns:IServiceMatch_NewChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/NewChatResponse" message="tns:IServiceMatch_NewChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/UpdateChat" message="tns:IServiceMatch_UpdateChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/UpdateChatResponse" message="tns:IServiceMatch_UpdateChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/DeletetChat" message="tns:IServiceMatch_DeletetChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/DeletetChatResponse" message="tns:IServiceMatch_DeletetChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllChats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllChats" message="tns:IServiceMatch_SelectAllChats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllChatsResponse" message="tns:IServiceMatch_SelectAllChats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatsByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectChatsByUser" message="tns:IServiceMatch_SelectChatsByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectChatsByUserResponse" message="tns:IServiceMatch_SelectChatsByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/InsertMessage" message="tns:IServiceMatch_InsertMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/InsertMessageResponse" message="tns:IServiceMatch_InsertMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/UpdateMessage" message="tns:IServiceMatch_UpdateMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/UpdateMessageResponse" message="tns:IServiceMatch_UpdateMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/DeletetMessage" message="tns:IServiceMatch_DeletetMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/DeletetMessageResponse" message="tns:IServiceMatch_DeletetMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllMessages" message="tns:IServiceMatch_SelectAllMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectAllMessagesResponse" message="tns:IServiceMatch_SelectAllMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectMessagesByChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectMessagesByChat" message="tns:IServiceMatch_SelectMessagesByChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectMessagesByChatResponse" message="tns:IServiceMatch_SelectMessagesByChat_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceMatch" type="tns:IServiceMatch">
@@ -238,6 +388,33 @@
     </wsdl:operation>
     <wsdl:operation name="IsUsernameFree">
       <soap:operation soapAction="http://tempuri.org/IServiceMatch/IsUsernameFree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserPropertise">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/InsertUserPropertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserPropertise">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/DeleteUserPropertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMatch">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/FindMatch" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -317,6 +494,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectPropertisesByCategory">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectPropertisesByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectPropertisesByUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectPropertisesByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertCategory">
       <soap:operation soapAction="http://tempuri.org/IServiceMatch/InsertCategory" style="document" />
       <wsdl:input>
@@ -346,6 +541,96 @@
     </wsdl:operation>
     <wsdl:operation name="SelectAllCategories">
       <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewChat">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/NewChat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChat">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/UpdateChat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetChat">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/DeletetChat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllChats">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectAllChats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatsByUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectChatsByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessage">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/InsertMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessage">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/UpdateMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetMessage">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/DeletetMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllMessages">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectAllMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMessagesByChat">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectMessagesByChat" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
