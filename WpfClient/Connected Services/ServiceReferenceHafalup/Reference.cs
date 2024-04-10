@@ -600,6 +600,12 @@ namespace WpfClient.ServiceReferenceHafalup {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/DeleteUserPropertise", ReplyAction="http://tempuri.org/IServiceMatch/DeleteUserPropertiseResponse")]
         System.Threading.Tasks.Task<int> DeleteUserPropertiseAsync(WpfClient.ServiceReferenceHafalup.User user, WpfClient.ServiceReferenceHafalup.Propertise propertise);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/ClearUserPropertise", ReplyAction="http://tempuri.org/IServiceMatch/ClearUserPropertiseResponse")]
+        void ClearUserPropertise(WpfClient.ServiceReferenceHafalup.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/ClearUserPropertise", ReplyAction="http://tempuri.org/IServiceMatch/ClearUserPropertiseResponse")]
+        System.Threading.Tasks.Task ClearUserPropertiseAsync(WpfClient.ServiceReferenceHafalup.User user);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/FindMatch", ReplyAction="http://tempuri.org/IServiceMatch/FindMatchResponse")]
         WpfClient.ServiceReferenceHafalup.UserList FindMatch(WpfClient.ServiceReferenceHafalup.User user);
         
@@ -719,6 +725,12 @@ namespace WpfClient.ServiceReferenceHafalup {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectChatsByUser", ReplyAction="http://tempuri.org/IServiceMatch/SelectChatsByUserResponse")]
         System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectChatsByUserAsync(WpfClient.ServiceReferenceHafalup.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectChatByUserToApprove", ReplyAction="http://tempuri.org/IServiceMatch/SelectChatByUserToApproveResponse")]
+        WpfClient.ServiceReferenceHafalup.ChatList SelectChatByUserToApprove(WpfClient.ServiceReferenceHafalup.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectChatByUserToApprove", ReplyAction="http://tempuri.org/IServiceMatch/SelectChatByUserToApproveResponse")]
+        System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectChatByUserToApproveAsync(WpfClient.ServiceReferenceHafalup.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/InsertMessage", ReplyAction="http://tempuri.org/IServiceMatch/InsertMessageResponse")]
         int InsertMessage(WpfClient.ServiceReferenceHafalup.Message message);
@@ -840,6 +852,14 @@ namespace WpfClient.ServiceReferenceHafalup {
         
         public System.Threading.Tasks.Task<int> DeleteUserPropertiseAsync(WpfClient.ServiceReferenceHafalup.User user, WpfClient.ServiceReferenceHafalup.Propertise propertise) {
             return base.Channel.DeleteUserPropertiseAsync(user, propertise);
+        }
+        
+        public void ClearUserPropertise(WpfClient.ServiceReferenceHafalup.User user) {
+            base.Channel.ClearUserPropertise(user);
+        }
+        
+        public System.Threading.Tasks.Task ClearUserPropertiseAsync(WpfClient.ServiceReferenceHafalup.User user) {
+            return base.Channel.ClearUserPropertiseAsync(user);
         }
         
         public WpfClient.ServiceReferenceHafalup.UserList FindMatch(WpfClient.ServiceReferenceHafalup.User user) {
@@ -1000,6 +1020,14 @@ namespace WpfClient.ServiceReferenceHafalup {
         
         public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectChatsByUserAsync(WpfClient.ServiceReferenceHafalup.User user) {
             return base.Channel.SelectChatsByUserAsync(user);
+        }
+        
+        public WpfClient.ServiceReferenceHafalup.ChatList SelectChatByUserToApprove(WpfClient.ServiceReferenceHafalup.User user) {
+            return base.Channel.SelectChatByUserToApprove(user);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectChatByUserToApproveAsync(WpfClient.ServiceReferenceHafalup.User user) {
+            return base.Channel.SelectChatByUserToApproveAsync(user);
         }
         
         public int InsertMessage(WpfClient.ServiceReferenceHafalup.Message message) {

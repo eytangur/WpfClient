@@ -46,7 +46,7 @@ namespace WpfClient
             {
                 myUser = myMatchService.Login(myUser);
                 MessageBox.Show("One more step and you are done", "OK", MessageBoxButton.OK);
-                AdditionalInformationWindow wnd = new AdditionalInformationWindow(myUser);
+                AdditionalInformationWindow wnd = new AdditionalInformationWindow(myUser,true);
                 Close();
                 wnd.ShowDialog();
             }

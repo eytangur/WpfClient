@@ -18,6 +18,10 @@
         <TextBlock Text="desc..."  Grid.Row="1" Margin="10 0"/>
         <WrapPanel Margin="5"
                    Grid.Row="2"
-                   x:Name="mainUC" />
+                   x:Name="mainWP" />
+        <Grid Margin="5"
+              Grid.Row="2"
+              x:Name="profileGD"
+              Visibility="Hidden" />
     </Grid>
 </UserControl>

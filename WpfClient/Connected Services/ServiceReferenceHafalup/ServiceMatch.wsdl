@@ -55,6 +55,12 @@
   <wsdl:message name="IServiceMatch_DeleteUserPropertise_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteUserPropertiseResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceMatch_ClearUserPropertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearUserPropertise" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_ClearUserPropertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearUserPropertiseResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceMatch_FindMatch_InputMessage">
     <wsdl:part name="parameters" element="tns:FindMatch" />
   </wsdl:message>
@@ -175,6 +181,12 @@
   <wsdl:message name="IServiceMatch_SelectChatsByUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:SelectChatsByUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectChatByUserToApprove_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectChatByUserToApprove" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatch_SelectChatByUserToApprove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectChatByUserToApproveResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceMatch_InsertMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertMessage" />
   </wsdl:message>
@@ -237,6 +249,10 @@
     <wsdl:operation name="DeleteUserPropertise">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/DeleteUserPropertise" message="tns:IServiceMatch_DeleteUserPropertise_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/DeleteUserPropertiseResponse" message="tns:IServiceMatch_DeleteUserPropertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearUserPropertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/ClearUserPropertise" message="tns:IServiceMatch_ClearUserPropertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/ClearUserPropertiseResponse" message="tns:IServiceMatch_ClearUserPropertise_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="FindMatch">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/FindMatch" message="tns:IServiceMatch_FindMatch_InputMessage" />
@@ -317,6 +333,10 @@
     <wsdl:operation name="SelectChatsByUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectChatsByUser" message="tns:IServiceMatch_SelectChatsByUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectChatsByUserResponse" message="tns:IServiceMatch_SelectChatsByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatByUserToApprove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/SelectChatByUserToApprove" message="tns:IServiceMatch_SelectChatByUserToApprove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatch/SelectChatByUserToApproveResponse" message="tns:IServiceMatch_SelectChatByUserToApprove_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatch/InsertMessage" message="tns:IServiceMatch_InsertMessage_InputMessage" />
@@ -406,6 +426,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteUserPropertise">
       <soap:operation soapAction="http://tempuri.org/IServiceMatch/DeleteUserPropertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearUserPropertise">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/ClearUserPropertise" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -586,6 +615,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectChatsByUser">
       <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectChatsByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectChatByUserToApprove">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatch/SelectChatByUserToApprove" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

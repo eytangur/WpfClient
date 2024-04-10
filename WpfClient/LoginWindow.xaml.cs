@@ -59,7 +59,7 @@ namespace WpfClient
             }
             else
             {
-                MessageBox.Show("Regular user login");
+                MessageBox.Show("Welcome Dear User");
                 HomeWindow uw = new HomeWindow(user);
                 Close();
                 uw.ShowDialog();

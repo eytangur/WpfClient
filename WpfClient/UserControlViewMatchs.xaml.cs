@@ -22,15 +22,18 @@ namespace WpfClient
     public partial class UserControlViewMatchs : UserControl
     {
         private UserList users;
+        private User me;
         private UserList view;
         private ServiceMatchClient matchClient;
-        public UserControlViewMatchs(User user)
+        private HomeWindow homeWindow;
+        public UserControlViewMatchs(User user,HomeWindow homeWindow)
         {
             InitializeComponent();
+            me=user;
             matchClient = new ServiceMatchClient();
             view = new UserList();
             int total=user.Propertises.Count;
-            //Get  match from service
+            //Get match from service
             users = matchClient.FindMatch(user);
             foreach (User match in users)
             {
@@ -43,13 +46,27 @@ namespace WpfClient
                 if(x==0) { continue; }
                 MatchUserControl uc = new MatchUserControl(match, x, total);
                 uc.MouseDown += Uc_MouseDown;
-                mainUC.Children.Add(uc);
+                mainWP.Children.Add(uc);
             }
         }
 
         private void Uc_MouseDown(object sender, MouseButtonEventArgs e)
         {
-           
+            mainWP.Visibility = Visibility.Collapsed;
+            profileGD.Visibility = Visibility.Visible;
+            User match= ((MatchUserControl)sender).user;
+            profileGD.Children.Clear();
+            profileGD.Children.Add(new UserControlProfile(me,match,this));
+
+        }
+        public void ViewMatch()
+        {
+            mainWP.Visibility = Visibility.Visible;
+            profileGD.Visibility = Visibility.Collapsed;
+        }
+        public void GotoChat()
+        {
+            homeWindow.ViewChats();
         }
     }
 }

@@ -45,8 +45,16 @@
                         x:Name="HomeButton"
                         Style="{StaticResource MenuButton}"
                         Click="MenuButton_Click" />
+                <Button Content="My Profile 👨🏿"
+                        x:Name="ProfileButton"
+                        Style="{StaticResource MenuButton}"
+                        Click="MenuButton_Click" />
                 <Button Content="Chat 💬"
                         x:Name="ChatButton"
+                        Style="{StaticResource MenuButton}"
+                        Click="MenuButton_Click" />
+                <Button Content="Waitting 💬"
+                        x:Name="RequestButton"
                         Style="{StaticResource MenuButton}"
                         Click="MenuButton_Click" />
                 <Button Content="search 🔍"

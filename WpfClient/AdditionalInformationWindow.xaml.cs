@@ -25,13 +25,15 @@ namespace WpfClient
         private Category c;
         private CategoryList categories;
         private List<StackPanel> stackPanels;
+        private bool IsNewUser;
 
-        public AdditionalInformationWindow(User myUser)
+        public AdditionalInformationWindow(User myUser, bool isNewUser)
         {
             InitializeComponent();
-            this.DataContext = this.myUser=myUser;
+            this.DataContext = this.myUser = myUser;
             matchClient = new ServiceMatchClient();
             LoadView();
+            IsNewUser = isNewUser;
         }
         private void LoadView()
         {
@@ -56,6 +58,8 @@ namespace WpfClient
                     checkBox.Content = p.PropName;
                     checkBox.Tag = p;
                     checkBox.Margin = new Thickness(5);
+                    if(myUser.Propertises!=null && myUser.Propertises.Find(my_p=>my_p.Id==p.Id)!=null)
+                        checkBox.IsChecked= true;
                     sp.Children.Add(checkBox);
                 }
                 CategoryStack.Children.Add(expander);
@@ -71,6 +75,8 @@ namespace WpfClient
                 MessageBox.Show("You Need To Choose At least One", "wrong", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+            if (!IsNewUser)
+                matchClient.ClearUserPropertise(myUser);
             foreach (Expander expander in CategoryStack.Children)
             {
                 StackPanel stackPanel = expander.Content as StackPanel;
@@ -86,9 +92,19 @@ namespace WpfClient
                     }
                 }
             }
-            HomeWindow homePage = new HomeWindow(myUser);
-            Close();
-            homePage.ShowDialog();
+            if (!IsNewUser)
+            {
+                HomeWindow HomePage = new HomeWindow(myUser);
+                Close();
+                HomePage.ShowDialog();
+            }
+            else
+            {
+                LoginWindow LoginPage = new LoginWindow();
+                Close();
+                LoginPage.ShowDialog();
+            }
+                
         }
 
         private bool CheckExpander()

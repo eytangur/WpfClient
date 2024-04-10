@@ -53,11 +53,16 @@ namespace WpfClient
                     break;
                     case "ChatButton":
                         dataPanel.Children.Add(new UserControlChats(myUser));
-                        break;
+                        break; 
                     case "searchButton":
-                        dataPanel.Children.Add(new UserControlViewMatchs(myUser));
+                        dataPanel.Children.Add(new UserControlViewMatchs(myUser,this));
                         break;
-
+                    case "ProfileButton":
+                        dataPanel.Children.Add(new UserControlProfile(myUser,this));
+                        break;
+                    case "RequestButton":
+                        dataPanel.Children.Add(new UserControlProfile(myUser, this));
+                        break;
                 }
             }
             catch (Exception ex)
@@ -90,6 +95,24 @@ namespace WpfClient
             {
                 throw ex;
             }
+        }
+
+        internal void ViewChats()
+        {
+            dataPanel.Children.Clear();
+            dataPanel.Children.Add(new UserControlChats(myUser));
+        }
+
+        internal void Logout() {
+            LoginWindow wnd = new LoginWindow();
+            this.Close();
+            wnd.ShowDialog();
+        }
+        internal void Edit()
+        {
+            AdditionalInformationWindow wnd = new AdditionalInformationWindow(myUser,false);
+            this.Close();
+            wnd.ShowDialog();
         }
     }
 }

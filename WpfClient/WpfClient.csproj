@@ -113,6 +113,9 @@
     <Compile Include="UserControlChats.xaml.cs">
       <DependentUpon>UserControlChats.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlProfile.xaml.cs">
+      <DependentUpon>UserControlProfile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlViewMatchs.xaml.cs">
       <DependentUpon>UserControlViewMatchs.xaml</DependentUpon>
     </Compile>
@@ -169,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlChats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

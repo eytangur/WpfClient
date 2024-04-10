@@ -101,7 +101,7 @@
                        FontSize="48"
                        FontFamily="Champagne &amp; Limousines"
                        FontWeight="Bold" />
-            <TextBlock Text="Making the impossible possible, the possible easy and the easy elegant"
+            <TextBlock Text="the truth? I don't know what I'm doing here... but who knows maybe the one for me is here"
                        Foreground="White"
                        HorizontalAlignment="Center"
                        Width="280"
@@ -110,12 +110,12 @@
                        TextWrapping="Wrap"
                        TextAlignment="Center"
                        Margin="0,50,0,0" />
-            <TextBlock Text="Moshe Feldenkrais"
+            <TextBlock Text="THE THIRD KING EYTAN GUR"
                        Foreground="White"
                        FontSize="18"
                        FontFamily="Champagne &amp; Limousines"
                        TextWrapping="Wrap"
-                       TextAlignment="Right"
+                       TextAlignment="Center"
                        Margin="10" />
         </StackPanel>
     </Grid>

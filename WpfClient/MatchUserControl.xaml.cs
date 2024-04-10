@@ -21,7 +21,7 @@ namespace WpfClient
     /// </summary>
     public partial class MatchUserControl : UserControl
     {
-        private User user;
+        public User user;
         public MatchUserControl(User user, int x, int total)
         {
             InitializeComponent();
@@ -38,8 +38,9 @@ namespace WpfClient
             }
             else
             {
-                GenderTextBlock.Text = "Female";
+                GenderTextBlock.Text = "♀️";
             }
         }
+        
     }
 }
