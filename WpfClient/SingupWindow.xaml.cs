@@ -40,7 +40,7 @@ namespace WpfClient
             }
             //Username if free, add to user the information
             myUser.Password = PasswordBox.Password;
-            myUser.Gender = GenderComboBox.SelectedValue.Equals("Male")? true : false;
+            myUser.Gender = GenderComboBox.Text.Equals("Male")? true : false;
             //Send to service
             if (myMatchService.InsertUser(myUser) == 1)
             {

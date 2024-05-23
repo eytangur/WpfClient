@@ -732,6 +732,12 @@ namespace WpfClient.ServiceReferenceHafalup {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectChatByUserToApprove", ReplyAction="http://tempuri.org/IServiceMatch/SelectChatByUserToApproveResponse")]
         System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectChatByUserToApproveAsync(WpfClient.ServiceReferenceHafalup.User user);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectChatMeWaitingToApprove", ReplyAction="http://tempuri.org/IServiceMatch/SelectChatMeWaitingToApproveResponse")]
+        WpfClient.ServiceReferenceHafalup.ChatList SelectChatMeWaitingToApprove(WpfClient.ServiceReferenceHafalup.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/SelectChatMeWaitingToApprove", ReplyAction="http://tempuri.org/IServiceMatch/SelectChatMeWaitingToApproveResponse")]
+        System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectChatMeWaitingToApproveAsync(WpfClient.ServiceReferenceHafalup.User user);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMatch/InsertMessage", ReplyAction="http://tempuri.org/IServiceMatch/InsertMessageResponse")]
         int InsertMessage(WpfClient.ServiceReferenceHafalup.Message message);
         
@@ -1028,6 +1034,14 @@ namespace WpfClient.ServiceReferenceHafalup {
         
         public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectChatByUserToApproveAsync(WpfClient.ServiceReferenceHafalup.User user) {
             return base.Channel.SelectChatByUserToApproveAsync(user);
+        }
+        
+        public WpfClient.ServiceReferenceHafalup.ChatList SelectChatMeWaitingToApprove(WpfClient.ServiceReferenceHafalup.User user) {
+            return base.Channel.SelectChatMeWaitingToApprove(user);
+        }
+        
+        public System.Threading.Tasks.Task<WpfClient.ServiceReferenceHafalup.ChatList> SelectChatMeWaitingToApproveAsync(WpfClient.ServiceReferenceHafalup.User user) {
+            return base.Channel.SelectChatMeWaitingToApproveAsync(user);
         }
         
         public int InsertMessage(WpfClient.ServiceReferenceHafalup.Message message) {

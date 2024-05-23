@@ -7,6 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Additional Information"
+        WindowStartupLocation="CenterScreen"
         Height="650"
         Width="550">
     <Window.Background>
@@ -62,7 +63,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Text="Sign Up"
+        <TextBlock x:Name="tbTitle" Text="Sign Up"
                    Grid.Row="0"
                    FontSize="50"
                    FontWeight="DemiBold"
@@ -79,7 +80,7 @@
         <Grid Width="120"
               Margin="5 10"
               Grid.Row="2">
-            <Button Style="{StaticResource MaterialDesignRaisedButton}"
+            <Button x:Name="btnSave" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="50" FontWeight="Black"
                     materialDesign:ButtonAssist.CornerRadius="15"
                     Content="Create ME!"

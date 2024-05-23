@@ -33,20 +33,20 @@ namespace WpfClient
         private void usersListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             User user = usersListView.SelectedItem as User;
-            TextBlock textBlock=new TextBlock();
-            StackPanel st=new StackPanel();
+            TextBlock textBlock = new TextBlock();
+            StackPanel st = new StackPanel();
             if (user != null)
             {
                 userinfo.DataContext = user;
 
-                PropertiseList propertises=  matchService.SelectPropertisesByUser(user);
+                PropertiseList propertises = matchService.SelectPropertisesByUser(user);
                 if (propertises == null) return;
                 IEnumerable<IGrouping<string, Propertise>> groupedData = propertises.GroupBy(p => p.PropCategory.CategoryName);
                 ProptiesPanel.Children.Clear();
                 foreach (var group in groupedData)
                 {
                     st = new StackPanel();
-                    st.Margin=new Thickness(3);
+                    st.Margin = new Thickness(3);
                     TextBlock header = new TextBlock();
                     header.Text = group.Key + ": ";
                     header.FontWeight = FontWeights.Bold;
@@ -58,8 +58,13 @@ namespace WpfClient
                     }
                     st.Children.Add(textBlock);
                     ProptiesPanel.Children.Add(st);
-                }                
+                }
             }
+        }
+        private void MameManager_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
+

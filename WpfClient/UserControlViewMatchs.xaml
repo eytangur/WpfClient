@@ -11,11 +11,11 @@
     <Grid Background="LightPink">
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition />
             <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
         <TextBlock Text="Matchs found"  Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35"/>
-        <TextBlock Text="desc..."  Grid.Row="1" Margin="10 0"/>
+        <TextBlock FontSize="25" TextWrapping="WrapWithOverflow" Text="Here you can see all the people in the program, select which one you want to start a chat with and press on them to send them a request"  Grid.Row="1" Margin="10 5"/>
         <WrapPanel Margin="5"
                    Grid.Row="2"
                    x:Name="mainWP" />

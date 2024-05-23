@@ -32,13 +32,12 @@
                        FontWeight="Bold"
                        Margin="0,10,0,0" />
             <StackPanel>
-                <TextBlock Text="{Binding Path=BDay}" />
-                <TextBlock>
-                    <Run Text="Married:" />
-                    <Run x:Name="isMr" /></TextBlock>
+                <TextBlock Text="{Binding Path=BDay, StringFormat={}/d}" />
+                <TextBlock Text="Married:" x:Name="isMr" />
                 <TextBlock>
                     <Run Text="Gender:" />
                     <Run x:Name="Gn" /></TextBlock>
+                
             </StackPanel>
             <WrapPanel x:Name="MainProp" />
         </StackPanel>

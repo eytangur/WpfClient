@@ -61,13 +61,8 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Margin="0 25">
-                <Button ToolTip="Make Changes">
-                    <materialDesign:PackIcon Kind="CheckboxMarkedOutline" />
-                </Button>
-                <Button  ToolTip="Delete user" >
-                    <materialDesign:PackIcon Kind="DeleteCircle" />
-                </Button>
-                <Button Content="🧑🏼‍💼" ToolTip="Make manager">
+                
+                <Button Click="MameManager_Click" Content="🧑🏼‍💼" ToolTip="Make manager" Margin="20">
                 </Button>
             </StackPanel>
             <TextBlock Text="Users propertise"

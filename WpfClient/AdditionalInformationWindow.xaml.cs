@@ -34,6 +34,8 @@ namespace WpfClient
             matchClient = new ServiceMatchClient();
             LoadView();
             IsNewUser = isNewUser;
+            tbTitle.Text = isNewUser ? "Sign Up" : "Edit";
+            btnSave.Content = isNewUser ? "Create ME!" : "Save Changes";
         }
         private void LoadView()
         {
@@ -76,13 +78,14 @@ namespace WpfClient
                 return;
             }
             if (!IsNewUser)
-                matchClient.ClearUserPropertise(myUser);
+                matchClient.ClearUserPropertise(myUser); //ניקוי כל התכונות הקיימות
+            //מעבר על כל הקטגוריות והוספה של תכונה אם נבחר
             foreach (Expander expander in CategoryStack.Children)
             {
                 StackPanel stackPanel = expander.Content as StackPanel;
                 foreach (CheckBox checkBox in stackPanel.Children)
                 {
-                    if ((bool)checkBox.IsChecked)
+                    if ((bool)checkBox.IsChecked) //האם התכונה נבחרה?
                     {
                         Propertise p=checkBox.Tag as Propertise;
                         if (matchClient.InsertUserPropertise(myUser, p) != 1)
@@ -94,17 +97,14 @@ namespace WpfClient
             }
             if (!IsNewUser)
             {
-                HomeWindow HomePage = new HomeWindow(myUser);
                 Close();
-                HomePage.ShowDialog();
             }
             else
             {
                 LoginWindow LoginPage = new LoginWindow();
                 Close();
                 LoginPage.ShowDialog();
-            }
-                
+            }                
         }
 
         private bool CheckExpander()

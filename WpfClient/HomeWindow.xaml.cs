@@ -111,7 +111,6 @@ namespace WpfClient
         internal void Edit()
         {
             AdditionalInformationWindow wnd = new AdditionalInformationWindow(myUser,false);
-            this.Close();
             wnd.ShowDialog();
         }
     }

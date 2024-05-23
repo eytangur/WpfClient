@@ -81,22 +81,8 @@ namespace WpfClient
                 if(count > 0) 
                     MainProp.Children.Add(expander);
             }
-            if (me.Gender == false)
-            {
-                Gn.Text = "Female";
-            }
-            else
-            {
-                Gn.Text = "Male";
-            }
-            if (me.Married == false)
-            {
-                isMr.Text = "No";
-            }
-            else
-            {
-                isMr.Text = "Yes";
-            }
+            Gn.Text =me.Gender?"Male":"Female";
+            isMr.Text = me.Married ? "Yes" : "No";
         }
 
         private void Request_Click(object sender, RoutedEventArgs e)
